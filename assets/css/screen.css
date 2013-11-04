@@ -1,0 +1,200 @@
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+  display: inline-block;
+}
+
+html[xmlns] .clearfix {
+  display: block;
+}
+
+* html .clearfix {
+  height: 1%;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.muted {
+  color: #bbbbbb;
+}
+
+#bg-transition {
+  -webkit-transition-property: background;
+  -moz-transition-property: background;
+  -o-transition-property: background;
+  transition-property: background;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+#all-transition {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #f1c40f;
+}
+
+.container {
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  background: #f1c40f;
+  color: white;
+  padding-top: 60px;
+}
+.header h1 {
+  margin: 0;
+  font-size: 80px;
+  text-shadow: rgba(0, 0, 0, 0.2) 1px 1px 0, rgba(0, 0, 0, 0.2) 2px 2px 0, rgba(0, 0, 0, 0.2) 3px 3px 0;
+}
+.header h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  text-shadow: rgba(0, 0, 0, 0.2) 1px 1px 0, rgba(0, 0, 0, 0.2) 2px 2px 0, rgba(0, 0, 0, 0.2) 3px 3px 0;
+}
+
+#search-form fieldset {
+  padding: 10px;
+  background: white;
+  width: 50%;
+  margin: 20px 25%;
+}
+#search-form input[type="text"] {
+  margin-right: 0;
+  border: 0;
+  box-shadow: none;
+  padding: 0.3em;
+  font-size: 1.1em;
+  color: #1590bc;
+  width: 100%;
+  text-align: center;
+}
+#search-form button[type="submit"] {
+  margin-left: 0;
+  border-radius: 0;
+  font-weight: bold;
+  float: right;
+  padding: 0.7em 1.5em;
+}
+
+.box {
+  position: relative;
+}
+.box section {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+.box section img {
+  height: 100%;
+  width: 100%;
+}
+.box section .overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  cursor: pointer;
+}
+.box section .overlay:hover {
+  background: rgba(0, 0, 0, 0);
+}
+.box section .overlay:hover .actions-layer {
+  left: 0;
+}
+.box section .overlay:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.9);
+}
+.box section .overlay .detail {
+  position: absolute;
+  bottom: 12px;
+}
+.box section .overlay .detail h4 {
+  padding: 0px 12px;
+  margin-bottom: 6px;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
+}
+.box section .overlay .detail p {
+  margin: 0;
+  padding: 0px 12px;
+  font-size: 12px;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
+}
+.box section .overlay .actions-layer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin: 35% 0;
+  height: 30%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.9);
+  left: 100%;
+  cursor: default;
+}
+.box section .overlay .actions-layer p {
+  font-size: 30px;
+  color: #f1c40f;
+  height: 100%;
+  margin-top: 0;
+}
+.box section .overlay .actions-layer p a {
+  padding: 20px;
+}
+.box section .overlay .actions-layer p a:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.loading-overlay {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.9);
+}
+.loading-overlay p > i {
+  font-size: 60px;
+}
+.loading-overlay a {
+  color: white;
+}
+.loading-overlay a:hover {
+  color: #f1c40f;
+}

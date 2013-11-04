@@ -1,0 +1,195 @@
+$default-text-shadow-color: rgba(black, 0.8)
+$default-text-shadow-blur: 2px
+$default-text-shadow-v-offset: 1px
+
+@import "compass/css3"
+// @import url(http://fonts.googleapis.com/css?family=Lato)
+
+.clearfix
+	&:after
+		content: "."
+		display: block
+		clear: both
+		visibility: hidden
+		line-height: 0
+		height: 0
+		display: inline-block
+
+html[xmlns] .clearfix
+	display: block
+
+* html .clearfix
+	height: 1%
+
+.pull-left
+	float: left
+
+.pull-right
+	float: right
+
+.text-center
+	text-align: center
+
+.muted
+	color: #bbb
+
+
+#bg-transition 
+	@include transition-property(background)
+	@include transition-duration(.3s)
+
+#all-transition 
+	@include transition-property(all)
+	@include transition-duration(.3s)
+
+body
+	font-family: "Helvetica Neue", Helvetica,Arial,sans-serif
+	background: #f1c40f
+// .container
+// 	width: 960px
+// 	margin: 0 auto
+
+.container
+	position: relative
+
+.header
+	text-align: center
+	background: #f1c40f
+	color: white
+	padding-top: 60px
+
+	h1
+		margin: 0
+		font-size: 80px
+		+text-shadow(rgba(black, 0.2) 1px 1px 0, rgba(black, 0.2) 2px 2px 0, rgba(black, 0.2) 3px 3px 0)
+
+	h2 
+		font-size: 40px
+		margin-bottom: 30px
+		+text-shadow(rgba(black, 0.2) 1px 1px 0, rgba(black, 0.2) 2px 2px 0, rgba(black, 0.2) 3px 3px 0)
+
+
+#search-form
+
+	fieldset
+		// padding: 0
+		padding: 10px
+		background: #fff
+		width: 50%
+		margin: 20px 25%
+
+	input[type="text"]
+		margin-right: 0
+		border: 0
+		box-shadow: none
+		padding: .3em
+		font-size: 1.1em
+		color: #1590BC
+		width: 100%
+		text-align: center
+
+	button[type="submit"]
+		margin-left: 0
+		border-radius: 0
+		font-weight: bold
+		float: right
+		padding: .7em 1.5em
+
+.box
+	position: relative
+
+	section
+		position: relative
+		height: 240px
+		overflow: hidden
+
+		img
+			height: 100%
+			width: 100%
+
+
+
+		.overlay
+			position: absolute
+			top: 0
+			width: 100%
+			height: 100%
+			z-index: 99
+			background: rgba(#000, 0.6)
+			color: white
+			cursor: pointer
+
+			&:hover
+				background: rgba(#000, 0)
+
+				.actions-layer
+					left: 0
+
+			&:after
+				content: " "
+				position: absolute
+				top: 0
+				width: 100%
+				height: 100%
+				z-index: 99
+				box-shadow: inset 0 0 10px rgba(#000, 0.9)
+
+			.detail
+				position: absolute
+				bottom: 12px
+
+				h4
+					padding: 0px 12px
+					margin-bottom: 6px
+					+single-text-shadow
+
+				p 
+					margin: 0
+					padding: 0px 12px
+					font-size: 12px
+					+single-text-shadow
+
+
+			.actions-layer
+				position: absolute
+				top: 0
+				width: 100%
+				margin: 35% 0
+				height: 30%
+				z-index: 100
+				background: rgba(#000, 0.9)
+				left: 100%
+				cursor: default
+
+				p
+					font-size: 30px
+					color: #f1c40f
+					height: 100%
+					margin-top: 0
+
+
+					a
+						padding: 20px
+
+						&:hover
+							cursor: pointer
+							color: #fff
+
+
+
+
+.loading-overlay
+	position: absolute
+	width: 100%
+	bottom: 0
+	top: 0
+	z-index: 1000
+	background: rgba(#000, 0.9)
+	p > i
+		font-size: 60px
+	a
+		color: white
+		&:hover	
+			color: #f1c40f
+
+

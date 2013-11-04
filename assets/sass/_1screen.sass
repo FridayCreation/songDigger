@@ -1,0 +1,53 @@
+@import "compass/css3"
+@import url(http://fonts.googleapis.com/css?family=Lato)
+
+body
+	font-family: "Lato", "Helvetica Neue", Helvetica,Arial,sans-serif
+	padding-top: 60px
+	background: #2884ea
+	font-weight: 300
+
+.navbar-custom
+	background-color: #f9f9f9 // layer fill content
+	+box-shadow(0 2px 0 rgba(0,0,0,.1))
+
+
+.menu
+	margin-top: 150px
+
+.page-head
+	color: rgba(#fff, 0.5)
+	font-size: 24px
+	font-weight: 300
+	margin-bottom: 50px
+
+
+.item
+	cursor: pointer
+	.icon
+		font-size: 80px
+		color: #0644a1
+		+transition-property(all)
+		+transition-duration(.3s)
+
+	.title
+		color: white
+		font-size: 20px
+
+	&:hover
+		.icon
+			font-size: 110px
+			color: #fff
+
+	&:active
+		.icon
+			color: darken(#fff, 20%)
+		.title
+			color: darken(#fff, 20%)
+
+
+
+/**
+ * DOC
+ */
+
