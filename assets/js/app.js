@@ -1,6 +1,6 @@
 
 //var xmlRoot = 'http://www.xiami.com/widget/xml-single/sid/';
-var songRoot = 'http://localhost:7000/';
+var songRoot = 'http://s.centwave.com/';
     
 
 
