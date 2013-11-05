@@ -107,6 +107,17 @@ function enable_scroll() {
     window.onmousewheel = document.onmousewheel = document.onkeydown = null;  
 }
 
+function resizeLayout() {
+  $items = $(".box");
+  $width = $items.width();
+
+  $items.each(function(){
+    $(this).css("height", $width);
+  });
+}
+
+$( window ).resize(resizeLayout);
+
 var MusicModel = function() {
   var self = this;
   this.page = 1;
@@ -195,7 +206,7 @@ var MusicModel = function() {
         results[i].song_name = unescapeHtml(decodeURIComponent(results[i].song_name).replace(/\+/g, " "));
         results[i].artist_name = unescapeHtml(decodeURIComponent(results[i].artist_name).replace(/\+/g, " "));
         results[i].album_name = unescapeHtml(decodeURIComponent(results[i].album_name).replace(/\+/g, " "));
-        results[i].album_logo = decodeURIComponent(results[i].album_logo).replace(/\_1/g, "");
+        results[i].album_logo = decodeURIComponent(results[i].album_logo).replace(/\_1/g, "_2");
         self.items.push(results[i]);
       };
 
@@ -203,6 +214,8 @@ var MusicModel = function() {
       {
         self.loadData(value);
       }
+
+      resizeLayout();
     });
   }
 

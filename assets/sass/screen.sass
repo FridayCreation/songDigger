@@ -42,6 +42,10 @@ html[xmlns] .clearfix
 	@include transition-property(all)
 	@include transition-duration(.3s)
 
+#width-transition
+	+transition-property(width)
+	+transition-duration(.5s)
+
 body
 	font-family: "Helvetica Neue", Helvetica,Arial,sans-serif
 	background: #f1c40f
@@ -78,6 +82,10 @@ body
 		width: 50%
 		margin: 20px 25%
 
+		&:hover
+			width: 100%
+			margin: 20px 0
+
 	input[type="text"]
 		margin-right: 0
 		border: 0
@@ -88,6 +96,9 @@ body
 		width: 100%
 		text-align: center
 
+	
+
+
 	button[type="submit"]
 		margin-left: 0
 		border-radius: 0
@@ -97,10 +108,11 @@ body
 
 .box
 	position: relative
+	height: 240px
 
 	section
 		position: relative
-		height: 240px
+		height: 100%
 		overflow: hidden
 
 		img
@@ -161,15 +173,15 @@ body
 				left: 100%
 				cursor: default
 
-				p
+				div#container
+					margin-top: 8%
 					font-size: 30px
 					color: #f1c40f
-					height: 100%
-					margin-top: 0
 
-
-					a
-						padding: 20px
+					i
+						padding: 0 20px
+						height: 100%
+						line-height: 100%
 
 						&:hover
 							cursor: pointer
@@ -179,7 +191,7 @@ body
 
 
 .loading-overlay
-	position: absolute
+	position: fixed
 	width: 100%
 	bottom: 0
 	top: 0

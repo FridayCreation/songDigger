@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
 	<!-- <link rel="stylesheet" type="text/css" href="assets/css/pure-lightblue.css"> -->
-	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="assets/css/screen.css">
 <style>
 #facebookG{
@@ -134,14 +134,14 @@ opacity:0.1}
 </head>
 <body>
 	<header class="header">
-		<h1>Song Digger</h1>
-		<h2>Find And Taste A Song</h2>		
+		<h1>音樂挖一挖</h1>
+		<h2>透過虾米試聽低質音樂</h2>		
 		<audio controls id="player" data-bind="visible: shouldShowPlayer">
 		 	<source type="audio/mp3" src="">
 			Your browser does not support the audio element.
 		</audio>
 		<form id="search-form" class="pure-skin-lightblue pure-form" data-bind="submit: q">
-		    <fieldset>
+		    <fieldset id="all-transition">
 		        <input id="query" type="text" placeholder="Song name, artist name or album name">
 		    </fieldset>
 		</form>
@@ -150,7 +150,7 @@ opacity:0.1}
 	<div class="wrapper">
 		<div class="container">
 			<div class="search-result pure-g-r" data-bind="foreach: items">
-				<div class="pure-u-1-5 box">
+				<div class="pure-u-1-5 box" id="item">
 					<section class="clearfix">
 						<img data-bind="attr: {src: album_logo}" alt="" width="100%" height="240px">
 						<div class="overlay" id="bg-transition">
@@ -160,10 +160,10 @@ opacity:0.1}
 							</div>
 							
 							<div class="actions-layer" id="all-transition">
-								<p class="text-center">
-									<a target="_blank" class="fa fa-music" data-bind="click: $parent.play"></a>
-									<a target="_blank" class="fa fa-download" data-bind="click: $parent.download"></a>
-								</p>
+								<div id="container" class="text-center">
+									<i target="_blank" class="fa fa-music" data-bind="click: $parent.play"></i>
+									<i target="_blank" class="fa fa-download" data-bind="click: $parent.download"></i>
+								</div>
 							</div>
 						</div>
 					</section>

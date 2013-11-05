@@ -54,6 +54,17 @@ html[xmlns] .clearfix {
   transition-duration: 0.3s;
 }
 
+#width-transition {
+  -webkit-transition-property: width;
+  -moz-transition-property: width;
+  -o-transition-property: width;
+  transition-property: width;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: #f1c40f;
@@ -86,6 +97,10 @@ body {
   width: 50%;
   margin: 20px 25%;
 }
+#search-form fieldset:hover {
+  width: 100%;
+  margin: 20px 0;
+}
 #search-form input[type="text"] {
   margin-right: 0;
   border: 0;
@@ -106,10 +121,11 @@ body {
 
 .box {
   position: relative;
+  height: 240px;
 }
 .box section {
   position: relative;
-  height: 240px;
+  height: 100%;
   overflow: hidden;
 }
 .box section img {
@@ -167,22 +183,23 @@ body {
   left: 100%;
   cursor: default;
 }
-.box section .overlay .actions-layer p {
+.box section .overlay .actions-layer div#container {
+  margin-top: 8%;
   font-size: 30px;
   color: #f1c40f;
+}
+.box section .overlay .actions-layer div#container i {
+  padding: 0 20px;
   height: 100%;
-  margin-top: 0;
+  line-height: 100%;
 }
-.box section .overlay .actions-layer p a {
-  padding: 20px;
-}
-.box section .overlay .actions-layer p a:hover {
+.box section .overlay .actions-layer div#container i:hover {
   cursor: pointer;
   color: white;
 }
 
 .loading-overlay {
-  position: absolute;
+  position: fixed;
   width: 100%;
   bottom: 0;
   top: 0;
